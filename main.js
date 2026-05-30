@@ -5,6 +5,11 @@ const todoList = document.getElementById('todoList');
 addBtn.addEventListener('click', function appenditems() {
     const task = todoInput.value.trim();
     if (task) {
+        todoInput.addEventListener('keypress', function(event){
+            if(event.key === 'Enter') {
+                addBtn.click();
+            }
+        });
         const li = document.createElement('li');
         li.textContent = task;
         const deletebtn = document.createElement('button');
