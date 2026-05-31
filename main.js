@@ -17,8 +17,21 @@ addBtn.addEventListener('click', function appenditems() {
         li.appendChild(deletebtn);
         deletebtn.classList.add('deletebtn');
         deletebtn.addEventListener('click', function () {
-            li.remove();
+            li.remove(); //li.remove is responsible for removing the task when delete is pressed
         });
+        const checkbox = document.createElement('input'); //creating the checkbox 
+        checkbox.type = 'checkbox';
+        checkbox.classList.add('checkbox');
+        checkbox.addEventListener('change', function () {
+            if (checkbox.checked) { //if the checkbox is checked the task will be lined-through and the opacity means greyed
+                li.style.textDecoration = 'line-through';
+                li.style.opacity = '0.5';
+            } else {
+                li.style.textDecoration = 'none';
+                li.style.opacity = '1';
+            }
+        });
+        li.appendChild(checkbox);
         todoList.appendChild(li);
         todoInput.value = '';
     } else {
