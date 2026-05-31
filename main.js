@@ -21,5 +21,7 @@ addBtn.addEventListener('click', function appenditems() {
         });
         todoList.appendChild(li);
         todoInput.value = '';
+    } else {
+        alert('Please enter a task!');
     }
 });
