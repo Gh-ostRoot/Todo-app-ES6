@@ -11,7 +11,10 @@ addBtn.addEventListener('click', function appenditems() {
             }
         });
         const li = document.createElement('li');
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
         li.textContent = task;
+        li.insertBefore(checkbox, li.firstChild);
         const deletebtn = document.createElement('button');
         deletebtn.textContent = 'Delete';
         li.appendChild(deletebtn);
